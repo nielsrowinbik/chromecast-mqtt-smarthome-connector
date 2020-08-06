@@ -166,7 +166,8 @@ class MqttPropertyHandler:
 
         # noinspection PyBroadException
         try:
-            value = float(payload)
+            # allow sending us floats but we only need the integer and not the decimal part
+            value = int(float(payload))
         except Exception:
             self.logger.exception("failed decoding requested volume level")
             return
@@ -183,7 +184,8 @@ class MqttPropertyHandler:
 
         # noinspection PyBroadException
         try:
-            value = int(payload)
+            # allow sending us floats but we only need the integer and not the decimal part
+            value = int(float(payload))
             self.changes_callback.on_player_position_requested(value)
         except Exception:
             self.logger.exception("failed decoding requested position")
