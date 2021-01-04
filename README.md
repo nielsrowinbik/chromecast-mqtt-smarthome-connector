@@ -57,7 +57,8 @@ For other player controls, simply publish e.g. `RESUME`, `PAUSE`, `STOP`, `SKIP`
 
 	docker build -t chromecast-mqtt-smarthome-connector .
 
-Raspberry Pi:
+Cross-build (for Raspberry Pi):
 
-	docker pull --platform arm arm32v7/python:3
-	docker build -t chromecast-mqtt-smarthome-connector:armhf -f Dockerfile.armhf .
+    docker buildx create --name mybuilder
+    docker buildx use mybuilder
+    docker buildx build --platform linux/amd64,linux/arm/v7 -t dersimn/chromecast-mqtt-smarthome-connector -t dersimn/chromecast-mqtt-smarthome-connector:1.x.0 --push .
