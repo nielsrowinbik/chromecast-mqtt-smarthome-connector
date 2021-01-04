@@ -1,8 +1,12 @@
-FROM python:3
+FROM python:3.8-alpine
 
-COPY . /python
+# install
+RUN mkdir /opt/chromecast-mqtt/
+COPY . /opt/chromecast-mqtt/
+COPY requirements.txt ./
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-RUN cd /python && \
-	pip3 install --no-cache-dir -r requirements.txt
+# clean
+RUN rm requirements.txt
 
-ENTRYPOINT [ "python3", "/python/connector.py" ]
+CMD [ "python", "/opt/chromecast-mqtt/connector.py" ]
