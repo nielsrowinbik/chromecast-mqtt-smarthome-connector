@@ -65,5 +65,6 @@ Cross-build (for Raspberry Pi):
         --platform linux/amd64,linux/arm/v7 \
         -t dersimn/chromecast-mqtt-smarthome-connector \
         -t dersimn/chromecast-mqtt-smarthome-connector:1 \
-        -t dersimn/chromecast-mqtt-smarthome-connector:1.x.x \
+        -t dersimn/chromecast-mqtt-smarthome-connector:1.3 \
+        -t dersimn/chromecast-mqtt-smarthome-connector:1.3.2 \
         --push .
