@@ -166,8 +166,7 @@ class MqttPropertyHandler:
 
         # noinspection PyBroadException
         try:
-            # allow sending us floats but we only need the integer and not the decimal part
-            value = int(float(payload))
+            value = float(payload)
         except Exception:
             self.logger.exception("failed decoding requested volume level")
             return

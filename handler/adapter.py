@@ -275,7 +275,7 @@ class ChromecastConnection(MqttChangesCallback):
         self.device.set_volume_muted(is_muted)
 
     def _worker_volume_level_absolute(self, absolute_value):
-        self.logger.info("volume change absolute request, value = %d" % absolute_value)
+        self.logger.info("volume change absolute request, value = %f" % absolute_value)
 
         if absolute_value > 1:
             self.logger.warning("received absolute volume level that was too high")
