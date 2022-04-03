@@ -67,8 +67,8 @@ Cross-build (for Raspberry Pi):
     docker buildx use mybuilder
     docker buildx build \
         --platform linux/amd64,linux/arm/v7 \
-        -t dersimn/chromecast-mqtt-smarthome-connector \
-        -t dersimn/chromecast-mqtt-smarthome-connector:1 \
-        -t dersimn/chromecast-mqtt-smarthome-connector:1.3 \
-        -t dersimn/chromecast-mqtt-smarthome-connector:1.3.2 \
+        -t nielsrowinbik/chromecast-mqtt-smarthome-connector \
+        -t nielsrowinbik/chromecast-mqtt-smarthome-connector:1 \
+        -t nielsrowinbik/chromecast-mqtt-smarthome-connector:1.3 \
+        -t nielsrowinbik/chromecast-mqtt-smarthome-connector:1.3.2 \
         --push .
